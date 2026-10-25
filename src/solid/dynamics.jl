@@ -452,10 +452,10 @@ function _add_joint_damping_force_jacobian!(
     iA = 3 * joint.body_id_A
     iB = 3 * joint.body_id_B
     b = joint.damping
-    J[iA, iA] += b
-    J[iA, iB] += -b
-    J[iB, iA] += -b
-    J[iB, iB] += b
+    J[iA, iA] += -b
+    J[iA, iB] += b
+    J[iB, iA] += b
+    J[iB, iB] += -b
     return nothing
 end
 
